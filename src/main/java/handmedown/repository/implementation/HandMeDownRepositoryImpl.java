@@ -18,17 +18,13 @@ public class HandMeDownRepositoryImpl<E extends HandMeDown> implements HandMeDow
             no need for duplicate support
             performant .contains() check
         */
-    Set<E> handMeDowns = null;
     Map<HandMeDownStatus,Set<E>> handMeDownStatusMap = null;
 
     public HandMeDownRepositoryImpl() {
-        if (handMeDowns == null){
-            handMeDowns = new HashSet<>();
-        }
         if(handMeDownStatusMap == null){
             handMeDownStatusMap = new HashMap<>();
-            handMeDownStatusMap.put(HandMeDownStatus.AVAILABLE,handMeDowns);
-            handMeDownStatusMap.put(HandMeDownStatus.UNAVAILABLE,handMeDowns);
+            handMeDownStatusMap.put(HandMeDownStatus.AVAILABLE,new HashSet<>());
+            handMeDownStatusMap.put(HandMeDownStatus.UNAVAILABLE,new HashSet<>());
         }
     }
 
