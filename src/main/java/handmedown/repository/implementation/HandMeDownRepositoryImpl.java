@@ -17,6 +17,12 @@ public class HandMeDownRepositoryImpl<E extends HandMeDown> implements HandMeDow
             no need for key-value pairs, only individual elements
             no need for duplicate support
             performant .contains() check
+
+         inside a map because:
+
+            all HandMeDowns are either Available or Unavailable
+            just specifying the key as status here will get the right set of data
+
         */
     Map<HandMeDownStatus,Set<E>> handMeDownStatusMap = null;
 
