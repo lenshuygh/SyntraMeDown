@@ -14,7 +14,7 @@ public class CarHandMeDownHelper {
                 .description("Black Golf VI lot of options in good condition")
                 .color(Color.BLACK)
                 .fuelType(FuelType.GASOLINE)
-                .mileage(65000)
+                .kilometersDriven(65000)
                 .price(new BigDecimal(10000))
                 .build();
     }
@@ -26,7 +26,7 @@ public class CarHandMeDownHelper {
                 .description("Quartz Grey Skoda Octavia with low mileage")
                 .color(Color.GREY)
                 .fuelType(FuelType.GASOLINE)
-                .mileage(500)
+                .kilometersDriven(500)
                 .price(new BigDecimal(26000))
                 .build();
     }

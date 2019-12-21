@@ -17,9 +17,9 @@ public class CarHandMeDownTest {
                 .price(new BigDecimal(10000))
                 .color(Color.BLACK)
                 .fuelType(FuelType.GASOLINE)
-                .mileage(65000)
+                .kilometersDriven(65000)
                 .build();
-        assertEquals(65000,carHandMeDown.getMileage());
+        assertEquals(65000,carHandMeDown.getKilometersDriven());
         assertEquals(Color.BLACK,carHandMeDown.getColor());
         assertEquals(FuelType.GASOLINE,carHandMeDown.getFuelType());
     }

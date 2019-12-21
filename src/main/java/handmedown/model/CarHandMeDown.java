@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 
 public class CarHandMeDown extends HandMeDown {
     private Color color;
-    private int mileage;
+    private int kilometersDriven;
     private FuelType fuelType;
 
     private CarHandMeDown(CarHandMeDownBuilder builder) {
         super(builder.user, builder.price, builder.title, builder.description);
         this.color = builder.color;
-        this.mileage = builder.mileage;
+        this.kilometersDriven = builder.kilometersDriven;
         this.fuelType = builder.fuelType;
     }
 
@@ -18,8 +18,8 @@ public class CarHandMeDown extends HandMeDown {
         return color;
     }
 
-    public int getMileage() {
-        return mileage;
+    public int getKilometersDriven() {
+        return kilometersDriven;
     }
 
     public FuelType getFuelType() {
@@ -33,7 +33,7 @@ public class CarHandMeDown extends HandMeDown {
         private String description;
 
         private Color color;
-        private int mileage;
+        private int kilometersDriven;
         private FuelType fuelType;
 
         public CarHandMeDownBuilder user(User user) {
@@ -61,8 +61,8 @@ public class CarHandMeDown extends HandMeDown {
             return this;
         }
 
-        public CarHandMeDownBuilder mileage(int mileage) {
-            this.mileage = mileage;
+        public CarHandMeDownBuilder kilometersDriven(int kilometersDriven) {
+            this.kilometersDriven = kilometersDriven;
             return this;
         }
 

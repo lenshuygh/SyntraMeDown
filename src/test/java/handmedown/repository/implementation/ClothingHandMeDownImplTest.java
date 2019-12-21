@@ -2,6 +2,7 @@ package handmedown.repository.implementation;
 
 import handmedown.model.ClothingHandMeDown;
 import handmedown.model.ClothingSize;
+import handmedown.model.HandMeDownStatus;
 import handmedown.repository.helpers.ClothingHandMeDownHelper;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +25,6 @@ public class ClothingHandMeDownImplTest {
         repositoryHelperCreateFilled();
         ClothingHandMeDown clothingToFind = ClothingHandMeDownHelper.createClothingHandMeDown();
         ClothingHandMeDown clothingToNotFind = ClothingHandMeDownHelper.createClothingHandMeDown2();
-
 
         boolean foundClothingHandMeDown = repository.getAll("description").contains(clothingToFind);
         boolean clothingHandMeDownNotFound = repository.getAll("description").contains(clothingToNotFind);
@@ -66,6 +66,27 @@ public class ClothingHandMeDownImplTest {
 
         assertTrue(resultsContainClothingWithSizeM);
         assertFalse(resultsContainClothingWithSizeXl);
+    }
+
+    @Test
+    void getStatusOfClothingHandMeDownWithStatusAvailable(){
+        repositoryHelperCreateFilled();
+        ClothingHandMeDown clothingHandMeDownToCheckStatusFrom = ClothingHandMeDownHelper.createClothingHandMeDown();
+
+        HandMeDownStatus handMeDownStatusShouldBeAvailable = repository.getStatus(clothingHandMeDownToCheckStatusFrom);
+
+        assertEquals(HandMeDownStatus.AVAILABLE,handMeDownStatusShouldBeAvailable);
+    }
+
+    @Test
+    void getStatusOfClothingHandMeDownWithStatusUnAvailable(){
+        repositoryHelperCreateFilled();
+        ClothingHandMeDown clothingHandMeDownToCheckStatusFrom = ClothingHandMeDownHelper.createClothingHandMeDown();
+
+        repository.setStatus(clothingHandMeDownToCheckStatusFrom,HandMeDownStatus.UNAVAILABLE);
+        HandMeDownStatus handMeDownStatusShouldBeAvailable = repository.getStatus(clothingHandMeDownToCheckStatusFrom);
+
+        assertEquals(HandMeDownStatus.UNAVAILABLE,handMeDownStatusShouldBeAvailable);
     }
 
     private void repositoryHelperCreateEmpty() {
