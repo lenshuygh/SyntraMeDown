@@ -7,7 +7,7 @@ import handmedown.model.RealEstateHandMeDown;
 import java.math.BigDecimal;
 
 public class RealEstateHandMeDownHelper {
-    public static HandMeDown createRealEstateHandMeDown() {
+    public static RealEstateHandMeDown createRealEstateHandMeDown() {
         return new RealEstateHandMeDown.RealEstateHandMeDownBuilder()
                 .user(UserHelper.createSimpleUser())
                 .title("Syntra Genk")
@@ -19,7 +19,7 @@ public class RealEstateHandMeDownHelper {
                 .build();
     }
 
-    public static HandMeDown createRealEstateHandMeDown2() {
+    public static RealEstateHandMeDown createRealEstateHandMeDown2() {
         return new RealEstateHandMeDown.RealEstateHandMeDownBuilder()
                 .user(UserHelper.createSimpleUser())
                 .title("My house")
